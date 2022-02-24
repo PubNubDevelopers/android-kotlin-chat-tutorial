@@ -57,18 +57,17 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.core.content.ContextCompat.startActivity
 import com.example.jetnews.R
 import com.example.jetnews.data.Result
 import com.example.jetnews.data.posts.impl.BlockingFakePostsRepository
 import com.example.jetnews.data.posts.impl.post3
 import com.example.jetnews.model.Post
 import com.example.jetnews.ui.theme.JetnewsTheme
-import com.example.jetnews.ui.utils.BookmarkButton
-import com.example.jetnews.ui.utils.FavoriteButton
-import com.example.jetnews.ui.utils.ShareButton
-import com.example.jetnews.ui.utils.TextSettingsButton
+import com.example.jetnews.ui.utils.*
 import com.example.jetnews.utils.isScrolled
 import com.google.accompanist.insets.navigationBarsPadding
+import com.example.jetnews.ui.chat.ChatActivity
 import kotlinx.coroutines.runBlocking
 
 /**
@@ -122,6 +121,7 @@ fun ArticleScreen(
                         isFavorite = isFavorite,
                         onToggleFavorite = onToggleFavorite,
                         onSharePost = { sharePost(post, context) },
+                        onOpenChat = { openChat(post,context)},
                         modifier = Modifier.navigationBarsPadding(start = false, end = false)
                     )
                 }
@@ -204,6 +204,7 @@ private fun BottomBar(
     isFavorite: Boolean,
     onToggleFavorite: () -> Unit,
     onSharePost: () -> Unit,
+    onOpenChat: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     Surface(elevation = 8.dp, modifier = modifier) {
@@ -216,7 +217,8 @@ private fun BottomBar(
             FavoriteButton(onClick = onUnimplementedAction)
             BookmarkButton(isBookmarked = isFavorite, onClick = onToggleFavorite)
             ShareButton(onClick = onSharePost)
-            Spacer(modifier = Modifier.weight(1f))
+            ChatButton(onClick = onOpenChat)
+            //Spacer(modifier = Modifier.weight(1f))
             TextSettingsButton(onClick = onUnimplementedAction)
         }
     }
@@ -259,6 +261,19 @@ fun sharePost(post: Post, context: Context) {
     }
     context.startActivity(Intent.createChooser(intent, context.getString(R.string.article_share_post)))
 }
+
+/**
+ * Opens chat for the article
+ *
+ * @param post to grab id from
+ * @param context Android context to show the chat in
+ */
+fun openChat(post:Post, context: Context) {
+    val intent = Intent(context, ChatActivity::class.java)
+    intent.putExtra("id", post.id) //pass the id as to name the channel
+    context.startActivity(intent) //transition to chat activity
+}
+
 
 @Preview("Article screen")
 @Preview("Article screen (dark)", uiMode = UI_MODE_NIGHT_YES)

@@ -41,6 +41,9 @@ android {
         }
     }
 
+    buildConfigField("String", "PUBLISH_KEY", project.property("PUBNUB_PUBLISH_KEY") as String)
+    buildConfigField("String", "SUBSCRIBE_KEY", project.property("PUBNUB_SUBSCRIBE_KEY") as String)
+
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
@@ -101,6 +104,8 @@ dependencies {
     implementation "androidx.compose.animation:animation:$compose_version"
     implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
     implementation "androidx.compose.runtime:runtime-livedata:$compose_version"
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
 
     implementation "com.google.accompanist:accompanist-swiperefresh:$accompanist_version"
@@ -133,6 +138,10 @@ dependencies {
     testImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
     // TODO: Bump to 4.6.* after https://github.com/robolectric/robolectric/issues/6593 is fixed
     testImplementation 'org.robolectric:robolectric:4.5.1'
+
+    //PubNub Dependencies
+    implementation "com.pubnub:pubnub-kotlin:7.0.0"
+    implementation "com.pubnub.components:chat-android:0.2.0"
 }
 
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {

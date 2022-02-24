@@ -16,16 +16,12 @@
 
 package com.example.jetnews.ui.utils
 
-import androidx.compose.material.ContentAlpha
-import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
-import androidx.compose.material.IconToggleButton
-import androidx.compose.material.LocalContentAlpha
+import android.content.DialogInterface
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Bookmark
-import androidx.compose.material.icons.filled.BookmarkBorder
-import androidx.compose.material.icons.filled.Share
-import androidx.compose.material.icons.filled.ThumbUpOffAlt
+import androidx.compose.material.icons.filled.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
@@ -34,6 +30,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.onClick
 import androidx.compose.ui.semantics.semantics
 import com.example.jetnews.R
+
 
 @Composable
 fun FavoriteButton(onClick: () -> Unit) {
@@ -79,6 +76,16 @@ fun ShareButton(onClick: () -> Unit) {
         Icon(
             imageVector = Icons.Filled.Share,
             contentDescription = stringResource(R.string.cd_share)
+        )
+    }
+}
+
+@Composable
+fun ChatButton(onClick: () -> Unit) {
+    IconButton(onClick) {
+        Icon(
+            imageVector = Icons.Filled.Chat, //icon included in material package
+            contentDescription = stringResource(R.string.article_chat)
         )
     }
 }
