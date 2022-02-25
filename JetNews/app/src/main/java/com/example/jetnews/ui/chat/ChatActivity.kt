@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import com.example.jetnews.BuildConfig
 import com.pubnub.api.PNConfiguration
 import com.pubnub.api.PubNub
 import com.pubnub.api.enums.PNLogVerbosity
@@ -56,8 +57,8 @@ class ChatActivity : ComponentActivity() {
         //setUser()
         pubNub  = PubNub(
             PNConfiguration(uuid = getRandomString(6)).apply {
-                publishKey = "publish_key"
-                subscribeKey = "subscribe_key"
+                publishKey = BuildConfig.PUBLISH_KEY
+                subscribeKey = BuildConfig.SUBSCRIBE_KEY
                 logVerbosity = PNLogVerbosity.NONE
             }
         )
