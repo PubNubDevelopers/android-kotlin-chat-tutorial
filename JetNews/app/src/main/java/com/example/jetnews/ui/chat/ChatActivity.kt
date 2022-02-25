@@ -34,9 +34,10 @@ class ChatActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         initializePubNub()
-        var channelId = getIntent().getStringExtra("id"); //using the article id as the channel name
+        var channelId = intent.getStringExtra("id") //using the article id as the channel name
         if(channelId == null)
-            channelId = "default-article"; //default channel name in case the article id can't be found.
+            channelId = "default-article" //default channel name in case the article id can't be found.
+        println("Chat activity with channel '$channelId'")
         setContent {
             ChatAppTheme(pubNub = pubNub) {
                 AddDummyData()
