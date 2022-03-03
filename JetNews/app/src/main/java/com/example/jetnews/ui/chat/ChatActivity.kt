@@ -40,7 +40,7 @@ class ChatActivity : ComponentActivity() {
         println("Chat activity with channel '$channelId'")
         setContent {
             ChatAppTheme(pubNub = pubNub) {
-                AddDummyData()
+                AddDummyData(channelId)
                 Box(modifier = Modifier.fillMaxSize()) {
                     ChannelView(id = channelId)
                 }
