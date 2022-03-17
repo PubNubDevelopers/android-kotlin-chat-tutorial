@@ -17,15 +17,11 @@ import com.pubnub.components.chat.ui.component.provider.LocalChannel
 import com.pubnub.components.chat.viewmodel.message.MessageViewModel
 import com.pubnub.components.data.member.DBMember
 import com.pubnub.components.data.membership.DBMembership
-//import com.pubnub.components.example.getting_started.ui.theme.AppTheme
-import com.example.jetnews.ui.chat.Chat
 import com.example.jetnews.ui.theme.ChatAppTheme
-import com.pubnub.components.chat.provider.ChatProvider
 import com.pubnub.components.repository.member.DefaultMemberRepository
 import com.pubnub.components.repository.membership.DefaultMembershipRepository
 import com.pubnub.framework.data.ChannelId
 import kotlinx.coroutines.launch
-import kotlin.random.Random
 
 class ChatActivity : ComponentActivity() {
 
@@ -34,10 +30,7 @@ class ChatActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         initializePubNub()
-        var channelId = intent.getStringExtra("id") //using the article id as the channel name
-        if(channelId == null)
-            channelId = "default-article" //default channel name in case the article id can't be found.
-        println("Chat activity with channel '$channelId'")
+        var channelId = "default-article"; //default channel name
         setContent {
             ChatAppTheme(pubNub = pubNub) {
                 AddDummyData(channelId)
@@ -54,8 +47,6 @@ class ChatActivity : ComponentActivity() {
     }
 
     private fun initializePubNub(){
-        //Configure users
-        //setUser()
         pubNub  = PubNub(
             PNConfiguration(uuid = getRandomString(6)).apply {
                 publishKey = BuildConfig.PUBLISH_KEY
@@ -65,6 +56,7 @@ class ChatActivity : ComponentActivity() {
         )
     }
 
+    //Generates random username based on length of integer. Taken from https://stackoverflow.com/questions/46943860/idiomatic-way-to-generate-a-random-alphanumeric-string-in-kotlin
     private fun getRandomString(length: Int) : String {
         val allowedChars = ('A'..'Z') + ('a'..'z') + ('0'..'9')
         return (1..length)

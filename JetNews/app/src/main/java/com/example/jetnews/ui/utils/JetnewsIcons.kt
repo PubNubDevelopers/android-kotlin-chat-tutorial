@@ -16,10 +16,11 @@
 
 package com.example.jetnews.ui.utils
 
-import android.content.DialogInterface
-import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
-import androidx.compose.material.*
+import androidx.compose.material.ContentAlpha
+import androidx.compose.material.Icon
+import androidx.compose.material.IconButton
+import androidx.compose.material.IconToggleButton
+import androidx.compose.material.LocalContentAlpha
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.runtime.Composable

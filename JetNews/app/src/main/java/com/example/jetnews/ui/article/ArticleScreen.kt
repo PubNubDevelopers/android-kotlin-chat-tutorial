@@ -57,17 +57,20 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.core.content.ContextCompat.startActivity
 import com.example.jetnews.R
 import com.example.jetnews.data.Result
 import com.example.jetnews.data.posts.impl.BlockingFakePostsRepository
 import com.example.jetnews.data.posts.impl.post3
 import com.example.jetnews.model.Post
+import com.example.jetnews.ui.chat.ChatActivity
 import com.example.jetnews.ui.theme.JetnewsTheme
-import com.example.jetnews.ui.utils.*
+import com.example.jetnews.ui.utils.BookmarkButton
+import com.example.jetnews.ui.utils.FavoriteButton
+import com.example.jetnews.ui.utils.ShareButton
+import com.example.jetnews.ui.utils.TextSettingsButton
+import com.example.jetnews.ui.utils.ChatButton
 import com.example.jetnews.utils.isScrolled
 import com.google.accompanist.insets.navigationBarsPadding
-import com.example.jetnews.ui.chat.ChatActivity
 import kotlinx.coroutines.runBlocking
 
 /**
@@ -218,7 +221,7 @@ private fun BottomBar(
             BookmarkButton(isBookmarked = isFavorite, onClick = onToggleFavorite)
             ShareButton(onClick = onSharePost)
             ChatButton(onClick = onOpenChat)
-            //Spacer(modifier = Modifier.weight(1f))
+            Spacer(modifier = Modifier.weight(1f))
             TextSettingsButton(onClick = onUnimplementedAction)
         }
     }
@@ -270,7 +273,6 @@ fun sharePost(post: Post, context: Context) {
  */
 fun openChat(post:Post, context: Context) {
     val intent = Intent(context, ChatActivity::class.java)
-    intent.putExtra("id", post.id) //pass the id as to name the channel
     context.startActivity(intent) //transition to chat activity
 }
 
