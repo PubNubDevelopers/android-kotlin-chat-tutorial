@@ -1,54 +1,92 @@
-# Jetpack Compose Samples
-<img src="readme/samples_montage.gif" alt="Jetpack Compose Samples" width="1024" />
+# Jetnews sample
+Jetnews is a sample news reading app, built with
+[Jetpack Compose](https://developer.android.com/jetpack/compose). The goal of the sample is to
+showcase the current UI capabilities of Compose.
 
-This repository contains a set of individual Android Studio projects to help you learn about
-Compose in Android. Each sample demonstrates different use cases, complexity levels and APIs.
-
-For more information, please [read the documentation](https://developer.android.com/jetpack/compose)
-
-💻 Requirements
-------------
-To try out these sample apps, you need to use [Android Studio Arctic Fox](https://developer.android.com/studio).
+To try out this sample app, you need to use 
+[Android Studio Arctic Fox](https://developer.android.com/studio).
 You can clone this repository or import the
 project from Android Studio following the steps
 [here](https://developer.android.com/jetpack/compose/setup#sample).
 
-🧬 Samples
-------------
+Screenshots
+-----------
+<img src="JetNews/screenshots/jetnews_demo.gif" alt="Screenshot">
 
-| Project | |
-|:-----|---------|
-|  <br><img src="readme/jetnews.png" alt="JetNews" width="240"></img> <br><br> A sample blog post viewer that demonstrates the use of Compose with a typical Material app and real-world architecture. <br><br> • Medium complexity<br>• Varied UI<br>• Light & dark themes<br>• Resource loading<br>• UI Testing <br><br> **[> Browse](JetNews/)**<br><br> | <img src="readme/screenshots/JetNews.png" width="320" alt="Jetnews sample demo"> |
-|  |  |
-|  <br><img src="readme/jetchat.png" alt="Jetchat" width="240"></img> <br><br>A sample chat app that focuses on UI state patterns and text input.<br><br>• Low complexity<br>• Material Design 3 theme and Material You dynamic color<br>• Resource loading<br>• Back button handling<br>• Integration with Architecture Components: Navigation, Fragments, LiveData, ViewModel<br>• Animation<br>• UI Testing<br><br>**[> Browse](Jetchat/)** <br><br> | <img src="readme/screenshots/Jetchat.png" width="320" alt="Jetchat sample demo">|
-|  |  |
-| <br><img src="readme/jetsurvey.png" alt="Jetsurvey" width="240"></img> <br><br>A sample survey app that showcases text input, validation and UI state management in Compose.<br><br>• Low complexity<br>• `TextField` and form validation<br>• Snackbar implementation<br>• Element reusability and styling<br>• Various form elements<br><br><br>**[> Browse](Jetsurvey/)** <br><br> | <img src="readme/screenshots/Jetsurvey.png" width="320" alt="Jetsurvey sample demo"> |
-|  |  |
-| <br><img src="readme/jetsnack.png" alt="Jetsnack" width="240"></img> <br><br>Jetsnack is a sample snack ordering app built with Compose.<br><br>• Medium complexity<br>• Custom design system<br>• Custom layouts<br>• Animation<br><br>**[> Browse](Jetsnack/)** <br><br>  | <img src="readme/screenshots/Jetsnack.png" width="320" alt="Jetsnack sample demo">|
-|  |  |
-| <br><img src="readme/jetcaster.png" alt="Jetcaster" width="240"></img> <br><br>A sample podcast app that features a full-featured, Redux-style architecture and showcases dynamic themes.<br><br>• Advanced sample<br>• Dynamic theming using podcast artwork<br>• Image fetching<br>• [`WindowInsets`](https://developer.android.com/reference/kotlin/android/view/WindowInsets) support<br>• Coroutines<br>• Local storage with Room<br><br>**[> Browse](Jetcaster/)** <br><br>  | <img src="readme/screenshots/Jetcaster.png" width="320" alt="Jetcaster sample demo">|
-|  |  |
-| <br><img src="readme/rally.png" alt="Rally" width="240"></img>  <br><br>A Compose implementation of the Rally Material study, a financial app that focuses on data, charts, reusability and animations.<br><br>• Low complexity<br>• Material theming with a dark-only theme<br>• Custom layouts and reusable elements<br>• Charts and tables<br>• Animations<br>• Screenshot tests<br><br>**[> Browse](Rally/)** <br><br>  | <img src="readme/screenshots/Rally.png" width="320" alt="Rally sample demo">|
-|  |  |
-| <br><img src="readme/crane.png" alt="Crane" width="240"></img>  <br><br>A Compose implementation of the Crane Material study, a travel app that uses Material Design components and Material Theming to create a personalized, on-brand experience.<br><br>• Medium complexity<br>• Draggable UI elements<br>• Android Views inside Compose<br>• UI state handling<br>• UI Tests<br><br>**[> Browse](Crane/)** <br><br>  | <img src="readme/screenshots/Crane.png" width="320" alt="Crane sample demo">|
-|  |  |
-| <br><img src="readme/owl.png" alt="Owl" width="240"></img>  <br><br>A Compose implementation of the Owl Material study. The Owl brand uses bold color, shape, and typography to express its brand attributes: energy, daring, and fun.<br><br>• Medium complexity<br>• Material theming & light/dark themes<br>• Custom layout<br>• Animation<br><br>**[> Browse](Owl/)** <br><br>  | <img src="readme/screenshots/Owl.png" width="320" alt="Owl sample demo">|
+## Features
 
+This sample contains three screens: a list of articles, a detail page for articles, and a page to
+subscribe to topics of interest. The navigation from the the list of articles to the interests
+screen uses a navigation drawer.
 
-🧬 Additional samples
-------------
+### App scaffolding
 
-| Project | |
-|:-----|---------|
-| <br><img src="readme/material_catalog.png" alt="Material Catalog" width="240"></img>  <br><br>A catalog of Material Design components and features available in Jetpack Compose. See how to implement them and how they look and behave on real devices.<br><br>• Lives in AOSP—always up to date<br>• Uses the same samples as API reference docs<br>• Theme picker to change Material Theming values at runtime<br>• Links to guidelines, docs, source code, and issue tracker<br><br>**[> Get it on Google Play](https://play.google.com/store/apps/details?id=androidx.compose.material.catalog)**<br>**[> Browse on AOSP](https://cs.android.com/androidx/platform/frameworks/support/+/androidx-main:compose/integration-tests/material-catalog)** <br><br>  | <img src="readme/screenshots/Material_Catalog.png" width="320" alt="Material Catalog sample demo">|
-|  |  |
-| <br><img src="readme/sunflower.png" alt="Sunflower" width="240"></img>  <br><br>A gardening app illustrating Android development best practices with Android Jetpack. The `compose` branch is partially built with Jetpack Compose.<br><br>• Compose working in an existing app: including integration with strings, resources, and themes and styles<br>• Integration with an existing architecture based on Jetpack libraries<br>• `CollapsingToolbarLayout` behavior implemented manually with Compose<br>• Showing [Snackbars](https://material.io/components/snackbars) with Compose<br><br>**[> Browse](https://goo.gle/sunflower-compose)** <br><br>  | <img src="readme/screenshots/Sunflower.png" width="320" alt="Sunflower sample demo">|
-|  |  |
-| <br><img src="readme/tivi.png" alt="Tivi" width="240"></img>  <br><br>A work-in-progress TV show tracking Android app, which connects to [Trakt.tv](https://www.trakt.tv).<br><br>• Entirely written in [Kotlin](https://kotlinlang.org) and uses [Kotlin Coroutines](https://kotlinlang.org/docs/reference/coroutines/coroutines-guide.html) throughout<br>• Uses many of the [Architecture Components](https://developer.android.com/topic/libraries/architecture): Room, Lifecycle, Navigation<br>• Uses [Hilt](https://dagger.dev/hilt) for dependency injection<br><br>**[> Browse](https://tivi.app)** <br><br>  | <img src="readme/screenshots/Tivi.jpg" width="320" alt="Tivi sample demo">|
+Package [`com.example.jetnews.ui`][1]
+
+[`JetnewsApp.kt`][2] arranges the different screens in the `NavDrawerLayout`. 
+
+[`JetnewsNavGraph.kt`][3] configures the navigation routes and actions in the app. 
+
+[1]: app/src/main/java/com/example/jetnews/ui
+[2]: app/src/main/java/com/example/jetnews/ui/JetnewsApp.kt
+[3]: app/src/main/java/com/example/jetnews/ui/JetnewsNavGraph.kt
+
+### Main article list
+
+Package [`com.example.jetnews.ui.home`][3]
+
+This screen shows how to create different custom Composable functions and combine them in a list
+that scrolls vertically and horizontally.
+
+See how to:
+
+* Use `Row`s and `Column`s to arrange the contents of the UI
+* Add an `AppBar`
+* Use `MaterialTypography` and opacity to style the text
+* Use `Shape` to round the corners of the images
+* Use elevation to make the `Card`s stand out from the background
+
+[3]: app/src/main/java/com/example/jetnews/ui/home
+
+### Article detail
+
+Package [`com.example.jetnews.ui.article`][4]
+
+This screen dives into the Text API, showing how to use different fonts than the ones defined in
+[`Typograhy`][5]. It also adds a bottom appbar, with custom actions.
+
+[4]: app/src/main/java/com/example/jetnews/ui/article
+[5]: app/src/main/java/com/example/jetnews/ui/theme/Type.kt
+
+### Interests screen
+
+Package [`com.example.jetnews.ui.interests`][6]
+
+This screens shows how to use Tabs and switch content depending on the selected tab. It
+also includes a custom checkbox button, [SelectTopicButton][7]
+that uses a `Toggleable` composable function to provide
+the on/off behaviour and semantics, while drawing a custom UI. The UI of the button is partly
+drawn with low-level primitives and partly overlaying images. See also how to visualize
+on and off, light and dark version in the Android Studio Preview.
+
+[6]: app/src/main/java/com/example/jetnews/ui/interests
+[7]: app/src/main/java/com/example/jetnews/ui/interests/SelectTopicButton.kt
+
+### Data
+
+The data in the sample is static, held in the `com.example.jetnews.data` package.
+
+### Instrumented and Robolectric tests
+
+UI tests can be run on device/emulators or on JVM with Robolectric.
+
+* To run Instrumented tests use the "Instrumented tests" run configuration or run the `./gradlew connectedCheck` command.
+* To run tests with Robolectric use the "Robolectric tests" run configuration or run the `./gradlew testDebug` command.
 
 ## License
+
 ```
-Copyright 2020 The Android Open Source Project
+Copyright 2021 The Android Open Source Project
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
