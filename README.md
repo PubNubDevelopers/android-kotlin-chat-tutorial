@@ -13,7 +13,7 @@ This application contains the base JetNews functionality along with a chat room 
 * Send messages to other users in the chat room.
 * Receive messages from other users in the chat room.
 * See past messages from other users in the chat room, even if the current user is offline.
-* See typing indicators from users in the [debug console](https://www.pubnub.com/docs/console).
+* See typing indicators from users in the [debug console](https://www.pubnub.com/docs/console) and interact with the Android app in real-time.
 
 ## Installing / Getting started
 
@@ -45,9 +45,30 @@ Put a short explanation of the steps below and what the developer should accompl
 1. Clone the GitHub repository.
 
 	```bash
-	git clone https://github.com/PubNubDevelopers/[REPLACE WITH REPO].git
+	git clone https://github.com/olivercarson-pubnub/compose-samples.git
 	```
-    
+2. Open the JetNews Folder in Android Studio.
+3. Open the gradle.properties file. 
+4. Replace the PUBNUB_PUBLISH_KEY and PUBNUB_SUBSCRIBE_KEY values with your own publish and subscribe keys respectively.
+5. Sync the gradle file and run the application.
+6. Click on an article to read.
+7. Click on the chat message icon on the bottom toolbar to open the chat room.
+8. Send and receive messages, and view past messages from other users.
+9. Generate new users each time the application is restarted.
+10. Receive messages in real-time by interacting with the [debug console](https://www.pubnub.com/docs/console).
+
+## Contributing
+Please fork the repository if you'd like to contribute. Pull requests are always welcome. 
+
+## Links
+
+- Project homepage: https://pubnub.com
+- Blog post: https://www.pubnub.com/blog/how-to-add-chat-to-android-application-with-pubnub/
+- Swift Weather Application integrated with chat using PubNub's Chat Components for iOS: https://github.com/PubNubDevelopers/Swift-Weather-Chat/
+
+## Further Information
+
+Checkout [PubNub Android Chat Docs](https://www.pubnub.com/docs/chat/components/android/get-started-android) page for more information about how to use Android Chat Components in your own Android app.
 
 
 ## License
