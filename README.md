@@ -1,89 +1,54 @@
-# In Progress
------------
-# Jetnews sample
-Jetnews is a sample news reading app, built with
-[Jetpack Compose](https://developer.android.com/jetpack/compose). The goal of the sample is to
-showcase the current UI capabilities of Compose.
+# JetNews Application with Chat using PubNub's Chat Components for Android 
+This project is the open-source Android Application JetNews integrate with chat using PubNub’s Chat Components for Android. This application was built to showcase how easy it is to add chat to an existing application without the need of massive overhead and managing your own servers. A [detailed tutorial](https://www.pubnub.com/blog/how-to-add-chat-to-android-application-with-pubnub/) is available for a step-by-step guide on how easy it is to integrate chat into your own application.
 
-To try out this sample app, you need to use 
-[Android Studio Arctic Fox](https://developer.android.com/studio).
-You can clone this repository or import the
-project from Android Studio following the steps
-[here](https://developer.android.com/jetpack/compose/setup#sample).
+The open-source application used is JetNews, which is a sample news reading app built with
+[Jetpack Compose](https://developer.android.com/jetpack/compose). 
 
-Screenshots
------------
 <img src="JetNews/screenshots/jetnews_demo.gif" alt="Screenshot">
 
 ## Features
 
-This sample contains three screens: a list of articles, a detail page for articles, and a page to
-subscribe to topics of interest. The navigation from the the list of articles to the interests
-screen uses a navigation drawer.
+This application contains the base JetNews functionality along with a chat room for each article for users to be able to chat about the article they have just read. Users can view a list of articles, read each article, and chat about these articles with other users.
+* Pre-built UI Component that renders and handles displaying the chat room.
+* Send messages to other users in the chat room.
+* Receive messages from other users in the chat room.
+* See past messages from other users in the chat room, even if the current user is offline.
+* See typing indicators from users in the [debug console](https://www.pubnub.com/docs/console).
 
-### App scaffolding
+## Installing / Getting started
 
-Package [`com.example.jetnews.ui`][1]
+Put a short explanation of the steps below and what the developer should accomplish at the end. For example: “For this project we’ll use NPM to install dependencies and run the project. You’ll also need a PubNub account.”
 
-[`JetnewsApp.kt`][2] arranges the different screens in the `NavDrawerLayout`. 
+### Requirements
+- [Latest Stable Release of Android Studio](https://developer.android.com/studio)
+- [PubNub Account](#pubnub-account) (*Free*)
 
-[`JetnewsNavGraph.kt`][3] configures the navigation routes and actions in the app. 
+<a href="https://dashboard.pubnub.com/signup">
+	<img alt="PubNub Signup" src="https://i.imgur.com/og5DDjf.png" width=260 height=97/>
+</a>
 
-[1]: app/src/main/java/com/example/jetnews/ui
-[2]: app/src/main/java/com/example/jetnews/ui/JetnewsApp.kt
-[3]: app/src/main/java/com/example/jetnews/ui/JetnewsNavGraph.kt
+### Get Your PubNub Keys
+1. Sign in to your [PubNub Dashboard](https://admin.pubnub.com/). You are now in the Admin Portal.
+2. Go to Apps on the left hand side of the Portal.
+3. Click the Create New App button in the top-right of the Portal.
+4. Give your app a name.
+5. Click Create.
+6. Click your new app to open its settings.
+7. When you create a new app, the first set of keys are generated automatically. However, a single app can have as many keysets as you like. PubNub recommends that you create separate keysets for production and test environments.
+8. Click on the keyset generated.
+9. Enable the Presence feature for your keyset. This will be used to show how many users are active. Enter "ENABLE" in all caps to confirm your choice. Leave the default settings.
+10. Enable the Storage and Playback feature for your keyset. Leave the default settings.
+11. Click Save Changes on the bottom right of the portal to save your changes.
+12. Copy the Publish and Subscribe Keys to a text editor.
 
-### Main article list
+### Building and Running
+1. Clone the GitHub repository.
 
-Package [`com.example.jetnews.ui.home`][3]
+	```bash
+	git clone https://github.com/PubNubDevelopers/[REPLACE WITH REPO].git
+	```
+    
 
-This screen shows how to create different custom Composable functions and combine them in a list
-that scrolls vertically and horizontally.
-
-See how to:
-
-* Use `Row`s and `Column`s to arrange the contents of the UI
-* Add an `AppBar`
-* Use `MaterialTypography` and opacity to style the text
-* Use `Shape` to round the corners of the images
-* Use elevation to make the `Card`s stand out from the background
-
-[3]: app/src/main/java/com/example/jetnews/ui/home
-
-### Article detail
-
-Package [`com.example.jetnews.ui.article`][4]
-
-This screen dives into the Text API, showing how to use different fonts than the ones defined in
-[`Typograhy`][5]. It also adds a bottom appbar, with custom actions.
-
-[4]: app/src/main/java/com/example/jetnews/ui/article
-[5]: app/src/main/java/com/example/jetnews/ui/theme/Type.kt
-
-### Interests screen
-
-Package [`com.example.jetnews.ui.interests`][6]
-
-This screens shows how to use Tabs and switch content depending on the selected tab. It
-also includes a custom checkbox button, [SelectTopicButton][7]
-that uses a `Toggleable` composable function to provide
-the on/off behaviour and semantics, while drawing a custom UI. The UI of the button is partly
-drawn with low-level primitives and partly overlaying images. See also how to visualize
-on and off, light and dark version in the Android Studio Preview.
-
-[6]: app/src/main/java/com/example/jetnews/ui/interests
-[7]: app/src/main/java/com/example/jetnews/ui/interests/SelectTopicButton.kt
-
-### Data
-
-The data in the sample is static, held in the `com.example.jetnews.data` package.
-
-### Instrumented and Robolectric tests
-
-UI tests can be run on device/emulators or on JVM with Robolectric.
-
-* To run Instrumented tests use the "Instrumented tests" run configuration or run the `./gradlew connectedCheck` command.
-* To run tests with Robolectric use the "Robolectric tests" run configuration or run the `./gradlew testDebug` command.
 
 ## License
 
