@@ -51,7 +51,6 @@ class ChatActivity : ComponentActivity() {
             PNConfiguration(uuid = getRandomString(6)).apply {
                 publishKey = BuildConfig.PUBLISH_KEY
                 subscribeKey = BuildConfig.SUBSCRIBE_KEY
-                logVerbosity = PNLogVerbosity.NONE
             }
         )
     }
