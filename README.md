@@ -4,7 +4,7 @@ This project is the open-source Android Application JetNews integrate with chat 
 The open-source application used is JetNews, which is a sample news reading app built with
 [Jetpack Compose](https://developer.android.com/jetpack/compose). 
 
-<img src="JetNews/screenshots/jetnews_demo.gif" alt="Screenshot">
+<img src="JetNews/screenshots/jetnews_pubnub_chat.gif" alt="Screenshot">
 
 ## Features
 
