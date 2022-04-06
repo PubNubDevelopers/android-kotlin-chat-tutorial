@@ -124,7 +124,7 @@ fun ArticleScreen(
                         isFavorite = isFavorite,
                         onToggleFavorite = onToggleFavorite,
                         onSharePost = { sharePost(post, context) },
-                        onOpenChat = { openChat(post,context)},
+                        onOpenChat = { openChat(post, context)},
                         modifier = Modifier.navigationBarsPadding(start = false, end = false)
                     )
                 }
@@ -271,7 +271,7 @@ fun sharePost(post: Post, context: Context) {
  * @param post to grab id from
  * @param context Android context to show the chat in
  */
-fun openChat(post:Post, context: Context) {
+fun openChat(post: Post, context: Context) {
     val intent = Intent(context, ChatActivity::class.java)
     context.startActivity(intent) //transition to chat activity
 }
