@@ -45,7 +45,7 @@ Put a short explanation of the steps below and what the developer should accompl
 1. Clone the GitHub repository.
 
 	```bash
-	git clone https://github.com/olivercarson-pubnub/compose-samples.git
+	git clone https://github.com/olivercarson-pubnub/jetnews-with-chat.git
 	```
 2. Open the JetNews Folder in Android Studio.
 3. Open the gradle.properties file. 
