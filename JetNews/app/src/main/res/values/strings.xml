@@ -43,7 +43,6 @@
     <string name="article_functionality_not_available">Functionality not available \uD83D\uDE48</string>
     <string name="article_share_post">Share post</string>
     <string name="article_post_min_read">%1$s • %2$d min read</string>
-    <string name="article_chat">Chat</string>
 
     <!-- Interests Screen -->
     <string name="interests_title">Interests</string>

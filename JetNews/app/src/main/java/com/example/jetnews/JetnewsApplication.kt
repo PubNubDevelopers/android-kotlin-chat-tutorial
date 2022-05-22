@@ -19,7 +19,6 @@ package com.example.jetnews
 import android.app.Application
 import com.example.jetnews.data.AppContainer
 import com.example.jetnews.data.AppContainerImpl
-import com.pubnub.components.data.Database
 
 class JetnewsApplication : Application() {
 
@@ -29,6 +28,5 @@ class JetnewsApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         container = AppContainerImpl(this)
-        Database.initialize(this)
     }
 }

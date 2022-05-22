@@ -82,16 +82,6 @@ fun ShareButton(onClick: () -> Unit) {
 }
 
 @Composable
-fun ChatButton(onClick: () -> Unit) {
-    IconButton(onClick) {
-        Icon(
-            imageVector = Icons.Filled.Chat, //icon included in material package
-            contentDescription = stringResource(R.string.article_chat)
-        )
-    }
-}
-
-@Composable
 fun TextSettingsButton(onClick: () -> Unit) {
     IconButton(onClick) {
         Icon(

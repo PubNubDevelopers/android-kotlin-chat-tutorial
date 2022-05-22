@@ -22,8 +22,6 @@ import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
-import com.pubnub.api.PubNub
-import com.pubnub.components.chat.provider.ChatProvider
 
 private val LightThemeColors = lightColors(
     primary = Red700,
@@ -58,21 +56,4 @@ fun JetnewsTheme(
         shapes = JetnewsShapes,
         content = content
     )
-}
-
-@Composable
-fun ChatAppTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
-    pubNub: PubNub,
-    content: @Composable() () -> Unit
-) {
-    MaterialTheme(
-        colors = if (darkTheme) DarkThemeColors else LightThemeColors,
-        typography = JetnewsTypography,
-        shapes = JetnewsShapes,
-    ) {
-        ChatProvider(pubNub) {
-            content()
-        }
-    }
 }
