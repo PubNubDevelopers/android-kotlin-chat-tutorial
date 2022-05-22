@@ -124,8 +124,7 @@ fun ArticleScreen(
                         isFavorite = isFavorite,
                         onToggleFavorite = onToggleFavorite,
                         onSharePost = { sharePost(post, context) },
-                        onOpenChat = { openChat(post, context)},
-                        modifier = Modifier.navigationBarsPadding(start = false, end = false)
+                        onOpenChat = { openChat(post, context)}
                     )
                 }
             } else {
