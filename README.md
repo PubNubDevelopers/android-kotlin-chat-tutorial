@@ -1,5 +1,5 @@
 # JetNews Application with Chat using PubNub's Chat Components for Android 
-This project is the open-source Android Application JetNews integrate with chat using PubNub’s Chat Components for Android. This application was built to showcase how easy it is to add chat to an existing application without the need of massive overhead and managing your own servers. A [detailed tutorial](https://www.pubnub.com/blog/how-to-add-chat-to-android-application-with-pubnub/) is available for a step-by-step guide on how easy it is to integrate chat into your own application.
+This project is the open-source Android Application JetNews integrate with chat using PubNub’s Chat Components for Android. This application was built to showcase how easy it is to add chat to an existing application without the need of massive overhead and managing your own servers. A [detailed tutorial](https://www.pubnub.com/tutorial/simple-chat-app-android-kotlin/) is available for a step-by-step guide on how easy it is to integrate chat into your own application.
 
 The open-source application used is JetNews, which is a sample news reading app built with
 [Jetpack Compose](https://developer.android.com/jetpack/compose). 
@@ -63,7 +63,7 @@ Please fork the repository if you'd like to contribute. Pull requests are always
 ## Links
 
 - Project homepage: https://pubnub.com
-- Blog post: https://www.pubnub.com/blog/how-to-add-chat-to-android-application-with-pubnub/
+- Tutorial Link: https://www.pubnub.com/tutorial/simple-chat-app-android-kotlin/
 - Swift Weather Application integrated with chat using PubNub's Chat Components for iOS: https://github.com/PubNubDevelopers/Swift-Weather-Chat/
 
 ## Further Information
