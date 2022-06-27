@@ -48,10 +48,9 @@ object Chat {
                     .fillMaxSize()
                     .weight(1f, true),
             )
-
             MessageInput(
                 typingIndicator = true,
-                typingIndicatorRenderer = AnimatedTypingIndicatorRenderer,
+                typingIndicatorRenderer = AnimatedTypingIndicatorRenderer
             )
         }
     }

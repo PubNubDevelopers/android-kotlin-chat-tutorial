@@ -7,10 +7,6 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
-import com.example.jetnews.BuildConfig
-import com.pubnub.api.PNConfiguration
-import com.pubnub.api.PubNub
-import com.pubnub.api.enums.PNLogVerbosity
 import com.pubnub.components.chat.provider.LocalMemberRepository
 import com.pubnub.components.chat.provider.LocalMembershipRepository
 import com.pubnub.components.chat.ui.component.provider.LocalChannel
@@ -18,18 +14,18 @@ import com.pubnub.components.chat.viewmodel.message.MessageViewModel
 import com.pubnub.components.data.member.DBMember
 import com.pubnub.components.data.membership.DBMembership
 import com.example.jetnews.ui.theme.ChatAppTheme
+import com.example.jetnews.utils.PubNubObj
+import com.pubnub.api.PubNub
 import com.pubnub.components.repository.member.DefaultMemberRepository
 import com.pubnub.components.repository.membership.DefaultMembershipRepository
 import com.pubnub.framework.data.ChannelId
 import kotlinx.coroutines.launch
 
 class ChatActivity : ComponentActivity() {
-
-    private lateinit var pubNub: PubNub
+    private val pubNub: PubNub = PubNubObj().getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        initializePubNub()
         var channelId = "default-article"; //default channel name
         setContent {
             ChatAppTheme(pubNub = pubNub) {
@@ -39,32 +35,6 @@ class ChatActivity : ComponentActivity() {
                 }
             }
         }
-    }
-
-    override fun onDestroy() {
-        destroyPubNub()
-        super.onDestroy()
-    }
-
-    private fun initializePubNub(){
-        pubNub  = PubNub(
-            PNConfiguration(uuid = getRandomString(6)).apply {
-                publishKey = BuildConfig.PUBLISH_KEY
-                subscribeKey = BuildConfig.SUBSCRIBE_KEY
-            }
-        )
-    }
-
-    //Generates random username based on length of integer. Taken from https://stackoverflow.com/questions/46943860/idiomatic-way-to-generate-a-random-alphanumeric-string-in-kotlin
-    private fun getRandomString(length: Int) : String {
-        val allowedChars = ('A'..'Z') + ('a'..'z') + ('0'..'9')
-        return (1..length)
-            .map { allowedChars.random() }
-            .joinToString("")
-    }
-
-    private fun destroyPubNub(){
-        pubNub.destroy()
     }
 
     // Channel view
@@ -82,6 +52,7 @@ class ChatActivity : ComponentActivity() {
         }
     }
 
+    //Add initial data to Local Database.
     @Composable
     fun AddDummyData(vararg channelId: ChannelId) {
 

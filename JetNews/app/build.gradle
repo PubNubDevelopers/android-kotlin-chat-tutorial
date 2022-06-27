@@ -17,6 +17,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -143,6 +144,9 @@ dependencies {
     //PubNub Dependencies
     implementation "com.pubnub:pubnub-kotlin:7.0.0"
     implementation "com.pubnub.components:chat-android:0.2.0"
+
+    //FCM Dependencies
+    implementation 'com.google.firebase:firebase-messaging-ktx:23.0.5'
 }
 
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
