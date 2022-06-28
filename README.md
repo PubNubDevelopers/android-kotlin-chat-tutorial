@@ -1,3 +1,5 @@
+#Currently in Progress
+
 # JetNews Application with Chat using PubNub's Chat Components for Android 
 This project is the open-source Android Application JetNews integrate with chat using PubNub’s Chat Components for Android. This application was built to showcase how easy it is to add chat to an existing application without the need of massive overhead and managing your own servers. A [detailed tutorial](https://www.pubnub.com/blog/how-to-add-chat-to-android-application-with-pubnub/) is available for a step-by-step guide on how easy it is to integrate chat into your own application.
 
