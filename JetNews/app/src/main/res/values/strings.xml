@@ -55,5 +55,8 @@
     <string name="cd_navigate_up">Navigate up</string>
     <string name="cd_navigate_home">Navigate to the home screen</string>
     <string name="cd_navigate_interests">Navigate to the interests screen</string>
+    <string name="default_notification_channel_id">default notification channel</string>
+    <string name="default_notification_channel_name">default channel name</string>
+    <string name="default_notification_channel_description">default channel description</string>
 
 </resources>
