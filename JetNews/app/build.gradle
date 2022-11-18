@@ -20,12 +20,12 @@ plugins {
 }
 
 android {
-    compileSdkVersion 32
+    compileSdkVersion 33
 
     defaultConfig {
         applicationId 'com.example.jetnews'
         minSdkVersion 21
-        targetSdkVersion 32
+        targetSdkVersion 33
         versionCode 1
         versionName '1.0'
         vectorDrawables.useSupportLibrary = true
@@ -84,8 +84,9 @@ android {
     }
 
     packagingOptions {
-        excludes += "/META-INF/AL2.0"
-        excludes += "/META-INF/LGPL2.1"
+        resources {
+            excludes += ['/META-INF/AL2.0', '/META-INF/LGPL2.1']
+        }
     }
 }
 
@@ -149,6 +150,10 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
 
         // Set JVM target to 1.8.
         jvmTarget = "1.8"
+
+        freeCompilerArgs += [
+                "-Xjvm-default=all",
+        ]
     }
 }
 
