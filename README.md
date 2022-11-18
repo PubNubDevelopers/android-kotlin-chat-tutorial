@@ -45,7 +45,7 @@ Put a short explanation of the steps below and what the developer should accompl
 1. Clone the GitHub repository.
 
 	```bash
-	git clone https://github.com/olivercarson-pubnub/jetnews-with-chat.git
+	git clone https://github.com/PubNubDevelopers/android-kotlin-chat-tutorial.git
 	```
 2. Open the JetNews Folder in Android Studio.
 3. Open the gradle.properties file. 
@@ -64,18 +64,13 @@ Please fork the repository if you'd like to contribute. Pull requests are always
 
 - Project homepage: https://pubnub.com
 - Tutorial Link: https://www.pubnub.com/tutorial/simple-chat-app-android-kotlin/
-- Swift Weather Application integrated with chat using PubNub's Chat Components for iOS: https://github.com/PubNubDevelopers/Swift-Weather-Chat/
+- PubNub Developer Resources: https://www.pubnub.com/developers/ 
 
 ## Further Information
 
 Checkout [PubNub Android Chat Docs](https://www.pubnub.com/docs/chat/components/android/get-started-android) page for more information about how to use Android Chat Components in your own Android app.
 
-
 ## License
-
-```
-Copyright 2021 The Android Open Source Project
-
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -87,4 +82,3 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-```
