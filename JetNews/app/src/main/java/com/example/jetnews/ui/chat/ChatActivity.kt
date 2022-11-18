@@ -18,6 +18,7 @@ import com.pubnub.components.chat.viewmodel.message.MessageViewModel
 import com.pubnub.components.data.member.DBMember
 import com.pubnub.components.data.membership.DBMembership
 import com.example.jetnews.ui.theme.ChatAppTheme
+import com.pubnub.api.UserId
 import com.pubnub.components.repository.member.DefaultMemberRepository
 import com.pubnub.components.repository.membership.DefaultMembershipRepository
 import com.pubnub.framework.data.ChannelId
@@ -26,11 +27,11 @@ import kotlinx.coroutines.launch
 class ChatActivity : ComponentActivity() {
 
     private lateinit var pubNub: PubNub
+    private var channelId = "default-article"; //default channel name
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         initializePubNub()
-        var channelId = "default-article"; //default channel name
         setContent {
             ChatAppTheme(pubNub = pubNub) {
                 AddDummyData(channelId)
@@ -48,9 +49,10 @@ class ChatActivity : ComponentActivity() {
 
     private fun initializePubNub(){
         pubNub  = PubNub(
-            PNConfiguration(uuid = getRandomString(6)).apply {
+            PNConfiguration(userId = UserId(value = getRandomString(6))).apply {
                 publishKey = BuildConfig.PUBLISH_KEY
                 subscribeKey = BuildConfig.SUBSCRIBE_KEY
+                logVerbosity = PNLogVerbosity.BODY
             }
         )
     }
@@ -71,8 +73,8 @@ class ChatActivity : ComponentActivity() {
     @Composable
     fun ChannelView(id: ChannelId) {
         // region Content data
-        val messageViewModel: MessageViewModel = MessageViewModel.defaultWithMediator(id)
-        val messages = remember { messageViewModel.getAll() }
+        val messageViewModel: MessageViewModel = MessageViewModel.defaultWithMediator()
+        val messages = remember { messageViewModel.getAll(channelId = channelId) }
         // endregion
 
         CompositionLocalProvider(LocalChannel provides id) {
@@ -86,19 +88,19 @@ class ChatActivity : ComponentActivity() {
     fun AddDummyData(vararg channelId: ChannelId) {
 
         // Creates a user object with uuid
-        val memberRepository: DefaultMemberRepository = LocalMemberRepository.current
-        val member: DBMember = DBMember(id = pubNub.configuration.uuid, name = pubNub.configuration.uuid, profileUrl = "https://picsum.photos/seed/${pubNub.configuration.uuid}/200")
+        val memberRepository: DefaultMemberRepository = LocalMemberRepository.current as DefaultMemberRepository
+        val member: DBMember = DBMember(id = pubNub.configuration.userId.toString(), name = pubNub.configuration.userId.toString(), profileUrl = "https://picsum.photos/seed/${pubNub.configuration.userId.toString()}/200")
 
         // Creates a membership so that the user could subscribe to channels
-        val membershipRepository: DefaultMembershipRepository = LocalMembershipRepository.current
+        val membershipRepository: DefaultMembershipRepository = LocalMembershipRepository.current as DefaultMembershipRepository
         val memberships: Array<DBMembership> = channelId.map { id -> DBMembership(channelId = id, memberId = member.id) }.toTypedArray()
 
         // Fills the database with member and memberships data
         val scope = rememberCoroutineScope()
         LaunchedEffect(null) {
             scope.launch {
-                memberRepository.add(member)
-                membershipRepository.add(*memberships)
+                memberRepository.insertOrUpdate(member)
+                membershipRepository.insertOrUpdate(*memberships)
             }
         }
     }

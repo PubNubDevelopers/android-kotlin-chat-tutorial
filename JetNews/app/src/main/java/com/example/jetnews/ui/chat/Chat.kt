@@ -29,7 +29,7 @@ object Chat {
     internal fun Content(
         messages: Flow<PagingData<MessageUi>>,
         presence: Presence? = null,
-        onMemberSelected: (UserId) -> Unit = {},
+        onMessageSelected: (MessageUi.Data) -> Unit = {},
     ) {
         val localFocusManager = LocalFocusManager.current
         Column(
@@ -43,15 +43,14 @@ object Chat {
             MessageList(
                 messages = messages,
                 presence = presence,
-                onMemberSelected = onMemberSelected,
+                onMessageSelected = onMessageSelected,
                 modifier = Modifier
                     .fillMaxSize()
                     .weight(1f, true),
             )
 
             MessageInput(
-                typingIndicator = true,
-                typingIndicatorRenderer = AnimatedTypingIndicatorRenderer,
+                typingIndicatorEnabled = true
             )
         }
     }
@@ -59,20 +58,15 @@ object Chat {
     @Composable
     fun View(channelId: ChannelId) {
         // region Content data
-        val messageViewModel: MessageViewModel = MessageViewModel.defaultWithMediator(channelId)
-        val messages = remember { messageViewModel.getAll() }
+        val messageViewModel: MessageViewModel = MessageViewModel.defaultWithMediator()
+        val messages = remember(channelId) { messageViewModel.getAll(channelId) }
         // endregion
 
         CompositionLocalProvider(
             LocalChannel provides channelId
         ) {
-
-            Scaffold(
-                content = {
-                    Content(
-                        messages = messages,
-                    )
-                }
+            Content(
+                messages = messages,
             )
         }
     }

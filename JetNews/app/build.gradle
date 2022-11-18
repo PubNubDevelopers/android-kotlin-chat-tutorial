@@ -20,12 +20,12 @@ plugins {
 }
 
 android {
-    compileSdkVersion 32
+    compileSdkVersion 33
 
     defaultConfig {
         applicationId 'com.example.jetnews'
         minSdkVersion 21
-        targetSdkVersion 32
+        targetSdkVersion 33
         versionCode 1
         versionName '1.0'
         vectorDrawables.useSupportLibrary = true
@@ -85,11 +85,12 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion compose_version
     }
-
     packagingOptions {
-        excludes += "/META-INF/AL2.0"
-        excludes += "/META-INF/LGPL2.1"
+        resources {
+            excludes += ['/META-INF/AL2.0', '/META-INF/LGPL2.1']
+        }
     }
+
 }
 
 dependencies {
@@ -141,8 +142,8 @@ dependencies {
     testImplementation 'org.robolectric:robolectric:4.5.1'
 
     //PubNub Dependencies
-    implementation "com.pubnub:pubnub-kotlin:7.0.0"
-    implementation "com.pubnub.components:chat-android:0.2.0"
+    implementation "com.pubnub:pubnub-kotlin:7.4.0"
+    implementation "com.pubnub.components:chat-android:0.5.2"
 }
 
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
@@ -156,9 +157,12 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
 
         // Set JVM target to 1.8
         jvmTarget = "1.8"
+        freeCompilerArgs += [
+                "-Xjvm-default=all",
+        ]
     }
 }
 
 tasks.withType(Test) {
     systemProperty "robolectric.logging", "stdout"
-} 
+}

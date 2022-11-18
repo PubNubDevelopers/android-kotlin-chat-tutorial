@@ -118,11 +118,10 @@ private fun NavRailIcon(
     )
 
     Surface(
-        color = backgroundColor,
         onClick = action,
+        modifier = modifier.size(48.dp),
         shape = CircleShape,
-        role = Role.Tab,
-        modifier = modifier.size(48.dp)
+        color = backgroundColor
     ) {
         NavigationIcon(
             icon = icon,

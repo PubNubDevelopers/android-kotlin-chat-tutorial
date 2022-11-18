@@ -17,27 +17,12 @@
 package com.example.jetnews.ui
 
 import android.os.Bundle
+import android.view.View
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.runtime.*
 import androidx.core.view.WindowCompat
 import com.example.jetnews.JetnewsApplication
 import com.example.jetnews.utils.rememberWindowSizeClass
-import com.pubnub.api.PNConfiguration
-import com.pubnub.api.PubNub
-import com.pubnub.api.enums.PNLogVerbosity
-import com.pubnub.components.chat.provider.LocalMemberRepository
-import com.pubnub.components.chat.provider.LocalMembershipRepository
-import com.pubnub.components.chat.ui.component.provider.LocalChannel
-import com.pubnub.components.chat.viewmodel.message.MessageViewModel
-import com.pubnub.components.data.member.DBMember
-import com.pubnub.components.data.membership.DBMembership
-import com.pubnub.components.repository.member.DefaultMemberRepository
-import com.pubnub.components.repository.membership.DefaultMembershipRepository
-import kotlinx.coroutines.launch
-import com.example.jetnews.ui.chat.Chat
-
-import com.pubnub.framework.data.ChannelId
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,5 +34,8 @@ class MainActivity : AppCompatActivity() {
             val windowSizeClass = rememberWindowSizeClass()
             JetnewsApp(appContainer, windowSizeClass)
         }
+        //Hiding the navigation bar as some virutal devices have problems with hiding the options to click on buttons.
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or
+                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
     }
 }
