@@ -66,7 +66,7 @@ This application contains the base JetNews functionality along with a chat room 
 1. Clone the GitHub repository.
 
 	```bash
-	git clone https://github.com/olivercarson-pubnub/jetnews-with-chat.git
+	git clone https://github.com/PubNubDevelopers/android-kotlin-chat-tutorial.git
 	```
 2. Open the JetNews Folder in Android Studio.
 3. Open the gradle.properties file. 
@@ -98,6 +98,7 @@ This application contains the base JetNews functionality along with a chat room 
 - Project homepage: https://pubnub.com
 - Detailed Add Push Notifications to an Android Kotlin Application using PubNub Tutorial Link: https://www.pubnub.com/tutorials/push-notifications-android-kotlin
 - Add Chat to an Android Kotlin Application using PubNub Chat Components Tutorial: https://www.pubnub.com/tutorial/simple-chat-app-android-kotlin/
+- PubNub Developer Resources: https://www.pubnub.com/developers/
 
 ## Further Information
 
@@ -105,12 +106,7 @@ Visit [PubNub Push Notifications Docs](https://www.pubnub.com/docs/push/send) to
 
 Also checkout [PubNub Android Chat Docs](https://www.pubnub.com/docs/chat/components/android/get-started-android) page for more information about how to use Android Chat Components in your own Android app.
 
-
 ## License
-
-```
-Copyright 2021 The Android Open Source Project
-
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -122,4 +118,3 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-```
