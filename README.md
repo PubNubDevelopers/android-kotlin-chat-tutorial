@@ -1,6 +1,6 @@
-# Add Push Notifications to an Android Kotlin Application using PubNub
-In this tutorial you’ll discover how to set up and add push notifications/messaging to an application.
-You will integrate push notifications to an application that allows users to receive updates, even when the application is in the foreground, background, and even closed. The [detailed, step-by-step tutorial](https://www.pubnub.com/tutorial/simple-chat-app-android-kotlin/) is also located at on PubNub's website.
+# Add Mobile Push Notifications to an Android Kotlin Application using PubNub
+In this tutorial you’ll discover how to set up and add mobile push notifications to an application.
+You will integrate mobile push notifications to an application that allows users to receive updates, even when the application is in the foreground, background, and even closed. The [detailed, step-by-step tutorial](https://www.pubnub.com/tutorial/simple-chat-app-android-kotlin/) is also located at on PubNub's website.
 
 If you would like to learn more about how the chat application was constructed, follow our [Android Kotlin Simple Chat Application Tutorial](https://www.pubnub.com/tutorial/simple-chat-app-android-kotlin/). A [detailed tutorial](https://www.pubnub.com/tutorial/simple-chat-app-android-kotlin/) is available for a step-by-step guide on how easy it is to integrate chat into your own application.
 
@@ -17,7 +17,7 @@ This application contains the base JetNews functionality along with a chat room 
 * Receive messages from other users in the chat room.
 * See past messages from other users in the chat room, even if the current user is offline.
 * See typing indicators from users in the [debug console](https://www.pubnub.com/docs/console) and interact with the Android app in real-time.
-* Receive push notifications using FCM regardless of application state (foreground, background, closed).
+* Receive mobile push notifications using FCM regardless of application state (foreground, background, closed).
 
 ## Installing / Getting started
 
@@ -55,10 +55,10 @@ This application contains the base JetNews functionality along with a chat room 
 6. Click your new app to open its settings.
 7. When you create a new app, the first set of keys are generated automatically. However, a single app can have as many keysets as you like. PubNub recommends that you create separate keysets for production and test environments.
 8. Click on the keyset generated.
-9. Enable the Presence feature for your keyset. This will be used to show how many users are active. Enter "ENABLE" in all caps to confirm your choice. Leave the default settings.
+9. Enable Presence for your keyset. This will be used to show how many users are active. Enter "ENABLE" in all caps to confirm your choice. Leave the default settings.
 10. Enable Stream Controller by clicking on the slider to turn it on if it is already not enabled. You can leave the default settings.
-11. Enable the Storage and Playback feature for your keyset. Leave the default settings.
-12. Enable Push Notifications by clicking on the slider to turn it on. In the Firebase Cloud Messaging section, add the Server key Token value to the FCM API Key field. This Server key token value is obtained from your FCM project in the Firebase console and going to the project settings page, clicking on the Cloud Messaging tab and copying the Server key token value from the Cloud Messaging API (Legacy) field.
+11. Enable the Message Persistence feature for your keyset. Leave the default settings.
+12. Enable Mobile Push Notifications by clicking on the slider to turn it on. In the Firebase Cloud Messaging section, add the Server key Token value to the FCM API Key field. This Server key token value is obtained from your FCM project in the Firebase console and going to the project settings page, clicking on the Cloud Messaging tab and copying the Server key token value from the Cloud Messaging API (Legacy) field.
 13. Click Save Changes on the bottom right of the portal to save your changes.
 14. Copy the Publish and Subscribe Keys to a text editor.
 
@@ -78,7 +78,7 @@ This application contains the base JetNews functionality along with a chat room 
 9. Send and receive messages, and view past messages from other users.
 10. Generate new users each time the application is restarted.
 11. Receive messages in real-time by interacting with the [debug console](https://www.pubnub.com/docs/console). 
-12. Include the pn_gcm push message payload field in the JSON message to have the app receive push notifications. An example JSON message to send:
+12. Include the pn_gcm push message payload field in the JSON message to have the app receive mobile push notifications. An example JSON message to send:
 	{
 	"text":"PubNub is super cool!",
 	 "type":"default",
@@ -91,18 +91,18 @@ This application contains the base JetNews functionality along with a chat room 
 	   }
 	}
 
-13. When clicking on the push notifications in-app, you will be brought to the chat room for this application.
+13. When clicking on the mobile push notifications in-app, you will be brought to the chat room for this application.
 
 ## Links
 
 - Project homepage: https://pubnub.com
-- Detailed Add Push Notifications to an Android Kotlin Application using PubNub Tutorial Link: https://www.pubnub.com/tutorials/push-notifications-android-kotlin
+- Detailed Add Mobile Push Notifications to an Android Kotlin Application using PubNub Tutorial Link: https://www.pubnub.com/tutorials/mobile-push-notifications-android-kotlin
 - Add Chat to an Android Kotlin Application using PubNub Chat Components Tutorial: https://www.pubnub.com/tutorial/simple-chat-app-android-kotlin/
 - PubNub Developer Resources: https://www.pubnub.com/developers/
 
 ## Further Information
 
-Visit [PubNub Push Notifications Docs](https://www.pubnub.com/docs/push/send) to learn more about Push Notifications using PubNub.
+Visit [PubNub's Mobile Push Notifications Docs](https://www.pubnub.com/docs/push/send) to learn more about Mobile Push Notifications using PubNub.
 
 Also checkout [PubNub Android Chat Docs](https://www.pubnub.com/docs/chat/components/android/get-started-android) page for more information about how to use Android Chat Components in your own Android app.
 
