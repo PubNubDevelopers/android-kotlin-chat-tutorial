@@ -36,8 +36,8 @@ Put a short explanation of the steps below and what the developer should accompl
 6. Click your new app to open its settings.
 7. When you create a new app, the first set of keys are generated automatically. However, a single app can have as many keysets as you like. PubNub recommends that you create separate keysets for production and test environments.
 8. Click on the keyset generated.
-9. Enable the Presence feature for your keyset. This will be used to show how many users are active. Enter "ENABLE" in all caps to confirm your choice. Leave the default settings.
-10. Enable the Storage and Playback feature for your keyset. Leave the default settings.
+9. Enable Presence for your keyset. This will be used to show how many users are active. Enter "ENABLE" in all caps to confirm your choice. Leave the default settings.
+10. Enable Message Persistence for your keyset. Leave the default settings.
 11. Click Save Changes on the bottom right of the portal to save your changes.
 12. Copy the Publish and Subscribe Keys to a text editor.
 
